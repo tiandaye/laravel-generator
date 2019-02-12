@@ -1,0 +1,51 @@
+{
+    "name": "tian/laravel-generator",
+    "description": "laravel-generator",
+    "type": "library",
+    "keywords": ["laravel", "generator"],
+    "homepage": "https://github.com/tiandaye/laravel-generator",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "tianwangchong",
+            "email": "q408596288@vip.qq.com"
+        }
+    ],
+    "require": {
+        "php": ">=7.0.0",
+        "laravel/framework": "~5.5"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "~6.0",
+        "laravel/laravel": "~5.5",
+        "laravel/browser-kit-testing": "^2.0",
+        "mockery/mockery": "~0.9"
+    },
+    "autoload": {
+        "psr-4": {
+            "Tian\\Generator\\": "src/"
+        },
+        "files": [
+            "src/helpers.php"
+        ]
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Tests\\Models\\": "tests/models",
+            "Tests\\Controllers\\": "tests/controllers"
+        },
+        "classmap": [
+            "tests/TestCase.php"
+        ]
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Tian\\Generator\\TianGeneratorServiceProvider"
+            ],
+            "aliases": {
+                "TianGenerator": "Tian\\Generator\\Facades\\TianGenerator"
+            }
+        }
+    }
+}
